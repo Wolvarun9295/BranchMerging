@@ -59,3 +59,27 @@ def gotSnakeBite(prevValue, currentValue, playerName):
 def gotLadderJump(prevValue, currentValue, playerName):
     print(f"{random.choice(ladderJump).upper()} ########")
     print(f"{playerName} climbed the ladder from {str(prevValue)} to {str(currentValue)}")
+
+
+def snakeLadder(playerName, currentValue, diceValue):
+    time.sleep(sleepActions)
+    prevValue = currentValue
+    currentValue = currentValue + diceValue
+
+    if currentValue > Goal:
+        print(f"You need {str(Goal - prevValue)} to win this game. Keep trying.")
+        return prevValue
+
+    print(f"{playerName} moved from {str(prevValue)} to {str(currentValue)}")
+    if currentValue in snakes:
+        finalValue = snakes.get(currentValue)
+        gotSnakeBite(currentValue, finalValue, playerName)
+
+    elif currentValue in ladders:
+        finalValue = ladders.get(currentValue)
+        gotLadderJump(currentValue, finalValue, playerName)
+
+    else:
+        finalValue = currentValue
+
+    return finalValue
