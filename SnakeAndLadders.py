@@ -49,3 +49,13 @@ def getDiceValue():
     diceValue = random.randint(1, diceFace)
     print(f"Its a {str(diceValue)}")
     return diceValue
+
+
+def gotSnakeBite(prevValue, currentValue, playerName):
+    print(f"{random.choice(snakeBite).upper()} ~~~~~~~~C")
+    print(f"{playerName} got a snake bite. Down from {str(prevValue)} to {str(currentValue)}")
+
+
+def gotLadderJump(prevValue, currentValue, playerName):
+    print(f"{random.choice(ladderJump).upper()} ########")
+    print(f"{playerName} climbed the ladder from {str(prevValue)} to {str(currentValue)}")
