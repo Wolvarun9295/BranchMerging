@@ -83,3 +83,12 @@ def snakeLadder(playerName, currentValue, diceValue):
         finalValue = currentValue
 
     return finalValue
+
+
+def winStatus(playerName, position):
+    time.sleep(sleepActions)
+    if Goal == position:
+        print(f"Thats it! {playerName} won the game.")
+        print(f"Congratulations {playerName}")
+        print("Thank you for playing the game.")
+        sys.exit(1)
