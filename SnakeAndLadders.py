@@ -42,3 +42,10 @@ def getPlayerName():
 
     print(f"Match will be played between {player1Name} and {player2Name}")
     return player1Name, player2Name
+
+
+def getDiceValue():
+    time.sleep(sleepActions)
+    diceValue = random.randint(1, diceFace)
+    print(f"Its a {str(diceValue)}")
+    return diceValue
