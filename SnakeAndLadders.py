@@ -92,3 +92,12 @@ def winStatus(playerName, position):
         print(f"Congratulations {playerName}")
         print("Thank you for playing the game.")
         sys.exit(1)
+
+
+def start():
+    welcomeScreen()
+    time.sleep(sleepActions)
+    player1Name, player2Name = getPlayerName()
+    time.sleep(sleepActions)
+
+    player1CurrentPosition = 0
