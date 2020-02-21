@@ -1,3 +1,7 @@
+import time
+import random
+import sys
+
 sleepActions = 1
 Goal = 100
 diceFace = 6
@@ -34,11 +38,11 @@ def welcomeScreen():
 def getPlayerName():
     player1Name = None
     while not player1Name:
-        player1Name = input("Player 1 enter your name: ").strip()
+        player1Name = input("Player 1 enter your name: ").strip().upper()
 
     player2Name = None
     while not player2Name:
-        player2Name = input("Player 2 enter your name: ").strip()
+        player2Name = input("Player 2 enter your name: ").strip().upper()
 
     print(f"Match will be played between {player1Name} and {player2Name}")
     return player1Name, player2Name
@@ -101,3 +105,19 @@ def start():
     time.sleep(sleepActions)
 
     player1CurrentPosition = 0
+    player2CurrentPosition = 0
+
+    while True:
+        time.sleep(sleepActions)
+        firstInput = input(f"{player1Name}:{random.choice(turnText)} Hit the enter to roll dice: ")
+        print("Rolling dice...")
+        diceValue = getDiceValue()
+        time.sleep(sleepActions)
+        print(f"{player1Name} moving....")
+        player1CurrentPosition = snakeLadder(player1Name, player1CurrentPosition, diceValue)
+
+        winStatus(player1Name, player1CurrentPosition)
+
+
+if __name__ == "__main__":
+    start()
