@@ -31,3 +31,14 @@ def welcomeScreen():
     print(msg)
 
 
+def getPlayerName():
+    player1Name = None
+    while not player1Name:
+        player1Name = input("Player 1 enter your name: ").strip()
+
+    player2Name = None
+    while not player2Name:
+        player2Name = input("Player 2 enter your name: ").strip()
+
+    print(f"Match will be played between {player1Name} and {player2Name}")
+    return player1Name, player2Name
